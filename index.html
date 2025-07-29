@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="SplatTalk">
+  <meta name="keywords" content="SplatTalk">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SplatTalk</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script> -->
+
+  <head>
+    <style type="text/css">
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #zoomedImage {
+      max-width: 100%;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    #zoomedImage.zoomed {
+      transform: scale(2);
+      cursor: zoom-out;
+      z-index: 100;
+      position: relative;
+    }
+    </style>
+</head>
+
+<head>
+  <style type="text/css">
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #zoomedImage2 {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  #zoomedImage2.zoomed {
+    transform: scale(1.75);
+    cursor: zoom-out;
+    z-index: 100;
+    position: relative;
+  }
+    #zoomedImage3 {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  #zoomedImage3.zoomed {
+    transform: scale(1.75);
+    cursor: zoom-out;
+    z-index: 100;
+    position: relative;
+  }
+    #zoomedImage4 {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  #zoomedImage4.zoomed {
+    transform: scale(1.75);
+    cursor: zoom-out;
+    z-index: 100;
+    position: relative;
+  }
+      #zoomedImage5 {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  #zoomedImage5.zoomed {
+    transform: scale(1.75);
+    cursor: zoom-out;
+    z-index: 100;
+    position: relative;
+  }
+  </style>
+</head>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">SplatTalk: 3D VQA with Gaussian Splatting</h1>
+          <h3 class="is-size-5 publication-authors">ICCV 2025</h3>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://anhthai1997.wordpress.com/">Anh Thai</a><sup>1,2</sup>,</span>
+            <span class="author-block">
+              <a href="https://pengsongyou.github.io/">Songyou Peng</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.kylegenova.com/">Kyle Genova</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://profiles.stanford.edu/leonidas-guibas">Leonidas Guibas</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=BghVDhgAAAAJ&hl=en">Thomas Funkhouser</a><sup>2</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology,</span>
+            <span class="author-block"><sup>2</sup>Google Deepmind</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.06271"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="publication-poster">
+      <img
+        src='static/images/overview.png'
+        width="100%"
+        height="100%"
+        onclick="zoomImage()"
+        id="zoomedImage"
+      >
+      </img>
+      <!-- <script>
+        function zoomImage() {
+          const image = document.getElementById('zoomedImage');
+          image.classList.toggle('zoomed');
+        }
+      </script> -->
+      <div class="content has-text-justified">
+        <p>
+            <strong>Overview of SplatTalk.</strong> We propose a self-supervised 3D-Language Gaussian Splatting model trained from multi-view RGB images. First, images are encoded using a pretrained 2D Vision-Language Model (VLM) and projected into visual-language feature maps via a multimodal projector. These feature maps are then learned within a feed-forward 3D-Language Gaussian Splatting model, producing a 3D-Language Gaussian Field that encodes spatial and semantic information in 3D space. During inference, the 3D Gaussian features are directly queried by a Large Language Model (LLM) to perform 3D question-answering (3D VQA) tasks.
+        </p>
+      </div>
+      
+    </div>
+    <!-- <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/teaser_gif.mp4"
+                type="video/mp4">
+      </video>
+    </div> -->
+  </div>
+</section>
+
+
+<!-- <section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/steve.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/chair-tp.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/shiba.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-fullbody">
+          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/fullbody.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/blueshirt.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-mask">
+          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/mask.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-coffee">
+          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/coffee.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-toby">
+          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/toby2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+            <p>
+                Language-guided 3D scene understanding is important for advancing applications in robotics, AR/VR, and human-computer interaction, enabling models to comprehend and interact with 3D environments through natural language. While 2D vision-language models (VLMs) have achieved remarkable success in 2D VQA tasks, progress in the 3D domain has been significantly slower due to the complexity of 3D data and the high cost of manual annotations. In this work, we introduce SplatTalk, a novel method that uses a generalizable 3D Gaussian Splatting (3DGS) framework to produce 3D tokens suitable for direct input into a pretrained LLM, enabling effective zero-shot 3D visual question answering (3D VQA) for scenes with only posed images. During experiments on multiple benchmarks, our approach outperforms both 3D models trained specifically for the task and previous 2D-LMM-based models utilizing only images (our setting), while achieving competitive performance with state-of-the-art 3D LMMs that additionally utilize 3D inputs. 
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Method. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+        <div class="publication-poster">
+            <img
+                src='static/images/arch.png'
+                width="100%"
+                height="100%"
+                onclick="zoomImage5()"
+                id="zoomedImage5"
+            >
+            </img>
+                                    <script>
+                function zoomImage5() {
+                const image = document.getElementById('zoomedImage5');
+                image.classList.toggle('zoomed');
+                }
+            </script>
+            <div class="content has-text-justified">
+                <p>
+                    <strong>Left</strong>: During the self-supervised 3D-language Gaussian Splatting training phase, multiple RGB input views are first encoded into Gaussian latent features (Gaussian triplets). These latent features are then decoded into Gaussian parameters for rendering, along with a low-dimensional visual-language feature.  To ensure proper supervision of this low-dimensional feature, we train an autoencoder that maps the high-dimensional, unbounded features obtained from LLaVA-OV, specifically, the visual tokens serving as direct inputs to the LLM, onto a low-dimensional hypersphere space. <strong>Right</strong>: During 3D VQA inference, visual-language features are directly extracted from the 3D Gaussians. These features are then mapped back to the original high-dimensional space using the pretrained decoder and subsequently used as direct visual token inputs to the LLM. LoRA fine-tuning of the LLM is optional. Click to zoom.
+                </p>
+            </div>
+            
+            </div>
+      </div>
+    </div>
+    <!--/ Method. -->
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="publication-poster">
+            <img
+                src='static/images/example_viz.png'
+                width="100%"
+                height="100%"
+                onclick="zoomImage2()"
+                id="zoomedImage2"
+            >
+            </img>
+            <script>
+                function zoomImage2() {
+                const image = document.getElementById('zoomedImage2');
+                image.classList.toggle('zoomed');
+                }
+            </script>
+            <div class="content has-text-centered">
+                <p>
+                    Click to zoom
+                </p>
+            </div>
+
+            <hr>
+        
+            <img
+                src='static/images/example_viz2.png'
+                width="100%"
+                height="100%"
+                onclick="zoomImage3()"
+                id="zoomedImage3"
+            >
+            </img>
+                        <script>
+                function zoomImage3() {
+                const image = document.getElementById('zoomedImage3');
+                image.classList.toggle('zoomed');
+                }
+            </script>
+            <div class="content has-text-centered">
+                <p>
+                    Click to zoom
+                </p>
+            </div>
+            <hr>
+        
+            <img
+                src='static/images/example_viz3.png'
+                width="100%"
+                height="100%"
+                onclick="zoomImage4()"
+                id="zoomedImage4"
+            >
+            </img>
+                                    <script>
+                function zoomImage4() {
+                const image = document.getElementById('zoomedImage4');
+                image.classList.toggle('zoomed');
+                }
+            </script>
+                        <div class="content has-text-centered">
+                <p>
+                    Click to zoom
+                </p>
+            </div>
+
+
+            
+            </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+
+    <!-- Paper video. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe id='player' type="text/html" width="640" height="390" src="https://www.youtube.com/embed/ZoA61DpsWK8"
+                  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <script>
+          // 2. This code loads the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+    
+          tag.src = "https://www.youtube.com/iframe_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    
+          // 3. This function creates an <iframe> (and YouTube player)
+          //    after the API code downloads.
+          var player;
+          function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+              height: '390',
+              width: '640',
+              videoId: 'M7lc1UVf-VE',
+              playerVars: {
+                'playsinline': 1
+              },
+              events: {
+                'onReady': onPlayerReady,
+                'onStateChange': onPlayerStateChange
+              }
+            });
+          }
+    
+          // 4. The API will call this function when the video player is ready.
+          function onPlayerReady(event) {
+            event.target.playVideo();
+          }
+    
+          // 5. The API calls this function when the player's state changes.
+          //    The function indicates that when playing a video (state=1),
+          //    the player should play for six seconds and then stop.
+          var done = false;
+          function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+              setTimeout(stopVideo, 6000);
+              done = true;
+            }
+          }
+          function stopVideo() {
+            player.stopVideo();
+          }
+        </script>
+    
+      </div>
+    </div> -->
+
+    <!--/ Paper poster. -->
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Poster</h2>
+
+        <div class="publication-poster">
+          <img
+            src='static/images/poster-1.png'
+            width="100%"
+            height="100%"
+            onclick="zoomImagePoster()"
+            id="zoomedImagePoster"
+          >
+          </img>
+          <script>
+            function zoomImagePoster() {
+              const image = document.getElementById('zoomedImagePoster');
+              image.classList.toggle('zoomed');
+            }
+          </script>
+          
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>
+
+
+
+
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{
+      thai2023lowshot,
+      title={Low-shot Object Learning with Mutual Exclusivity Bias},
+      author={Ngoc Anh Thai and Ahmad Humayun and Stefan Stojanov and Zixuan Huang and Bikram Boote and James Matthew Rehg},
+      booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+      year={2023},
+      url={https://openreview.net/forum?id=9lOVNw7guQ}
+      }</code></pre>
+  </div>
+</section> -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website template is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+
+
